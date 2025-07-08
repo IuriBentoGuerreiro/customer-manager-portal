@@ -1,7 +1,7 @@
 import { Cliente, ClienteFormular } from '@/types/cliente';
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:8080';
+const API_BASE_URL = 'http://localhost:8081/bff';
 
 export const listarClientes = async (): Promise<Cliente[]> => {
   const response = await axios.get<Cliente[]>(`${API_BASE_URL}/clientes`);
