@@ -1,19 +1,20 @@
-import React from 'react';
-import styles from '@/styles/cliente/ClienteDetalhes.module.css';
-import Layout from '@/components/comum/Layout';
-import { Cliente } from '@/types/cliente';
 import { buscarClientePorId } from '@/service/clienteService';
+import Layout from '@/components/comum/Layout';
+import styles from '@/styles/cliente/ClienteDetalhes.module.css';
+import { Cliente } from '@/types/cliente';
 
 interface ClienteDetalhesPaginaProps {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
-export default async function ClienteDetalhesPaginaProps({ params }: ClienteDetalhesPaginaProps) {
+export default async function PaginaDetalhesCliente({ params }: ClienteDetalhesPaginaProps) {
+  const { id } = await params;
+
   let cliente: Cliente | null = null;
   let error = '';
 
   try {
-    cliente = await buscarClientePorId(params.id);
+    cliente = await buscarClientePorId(id);
   } catch (err) {
     console.error('Erro ao buscar cliente:', err);
     error = 'Não foi possível carregar os detalhes do cliente.';
