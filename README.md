@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Customer Manager Portal - Front-end
 
-First, run the development server:
+Este é o projeto front-end do **Customer Manager Portal**, desenvolvido como parte de um teste prático. Ele tem como objetivo fornecer uma interface web para interagir com uma API de gerenciamento de clientes, permitindo listar, cadastrar e visualizar detalhes de clientes.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🚀 Tecnologias Utilizadas
+
+Este projeto foi construído com as seguintes tecnologias e conceitos:
+
+- **Framework:** [Next.js](https://nextjs.org/)
+- **Linguagem:** [TypeScript](https://www.typescriptlang.org/)
+- **Biblioteca de UI:** [React](https://react.dev/)
+- **Requisições HTTP:** [Axios](https://axios-http.com/)
+- **Gerenciamento de Estado:** `useState`
+- **Estilização:** [CSS Modules](https://nextjs.org/docs/app/building-your-application/styling/css-modules)
+- **Padronização de Código:** ESLint e Prettier
+
+---
+
+## 📋 Modelo de Dados
+
+A aplicação interage com o seguinte modelo de dados para clientes:
+
+```json
+{
+  "id": "UUID",
+  "nome": "João Silva",
+  "email": "joao@email.com",
+  "dataNascimento": "1990-01-01"
+}
 ```
+## ✨ Funcionalidades
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+O portal oferece as seguintes funcionalidades principais para gerenciamento de clientes:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Listagem de Clientes:** Exibe uma tabela com todos os clientes cadastrados.
+- **Cadastro de Cliente:** Um formulário dedicado para a inserção de novos clientes.
+- **Detalhes do Cliente:** Uma página específica que mostra informações detalhadas de um cliente, utilizando Server-Side Rendering (SSR) para otimização de performance e SEO.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+⚙️ Como Rodar Localmente
+Pré-requisitos
 
-## Learn More
+    Node.js (v18.19.1 ou superior): Baixe aqui
 
-To learn more about Next.js, take a look at the following resources:
+    npm (vem junto com o Node.js) ou Yarn
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    Back-end (BFF): Certifique-se de que o projeto de back-end (BFF) esteja em execução e acessível na porta 8080
+    (ex: http://localhost:8080)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Passos de Execução
 
-## Deploy on Vercel
+    git clone https://github.com/IuriBentoGuerreiro/customer-manager-portal
+cd customer-manager-portal
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    npm install
+ ou, se preferir:
+	 yarn install
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+    npm run dev
+ ou:
+ yarn dev
+
+
+
+    Abra seu navegador e vá para: http://localhost:3000
+
+
+
+Você poderá navegar para:
+
+    http://localhost:3000/clientes – Lista de clientes
+
+    http://localhost:3000/clientes/cadastro – Cadastro de novo cliente
+
